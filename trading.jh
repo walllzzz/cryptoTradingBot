@@ -1,0 +1,21 @@
+entity TradeInfo {
+	time Instant,
+    action Decision,
+    lastAction Decision,
+    assetPrice Long,
+    balance Long
+}
+
+enum Decision {
+    BUY, SELL, WATCH
+}
+
+// Set pagination options
+paginate TradeInfo with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix

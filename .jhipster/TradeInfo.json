@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "action",
+            "fieldType": "Decision",
+            "fieldValues": "BUY,SELL,WATCH"
+        },
+        {
+            "fieldName": "lastAction",
+            "fieldType": "Decision",
+            "fieldValues": "BUY,SELL,WATCH"
+        },
+        {
+            "fieldName": "assetPrice",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "balance",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171225150326",
+    "entityTableName": "trade_info",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}
