@@ -1,0 +1,42 @@
+
+<div *ngIf="tradeInfo">
+    <h2><span>Trade Info</span> {{tradeInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Time</span></dt>
+        <dd>
+            <span>{{tradeInfo.time | date:'medium'}}</span>
+        </dd>
+        <dt><span>Action</span></dt>
+        <dd>
+            <span>{{tradeInfo.action}}</span>
+        </dd>
+        <dt><span>Last Action</span></dt>
+        <dd>
+            <span>{{tradeInfo.lastAction}}</span>
+        </dd>
+        <dt><span>Asset Price</span></dt>
+        <dd>
+            <span>{{tradeInfo.assetPrice}}</span>
+        </dd>
+        <dt><span>Balance</span></dt>
+        <dd>
+            <span>{{tradeInfo.balance}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'trade-info-my-suffix/'+ tradeInfo.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
